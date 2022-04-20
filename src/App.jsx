@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import Home from './paginas/Home'
 import Sobre from './paginas/Sobre'
@@ -10,12 +10,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/sobre">
-          <Sobre />
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/sobre">
+            <Sobre />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </>
   )
