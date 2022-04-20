@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
         </Route>
         <Route path="/sobre">
