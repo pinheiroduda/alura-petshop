@@ -8,6 +8,7 @@ import Cabecalho from './components/Cabecalho'
 
 import './assets/css/base/base.css'
 import Post from './paginas/Post'
+import Categoria from './paginas/Categoria'
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/sobre">
             <Sobre />
+          </Route>
+          <Route path="/categoria">
+            <Categoria />
           </Route>
           <Route path="/posts/:id">
             <Post />
