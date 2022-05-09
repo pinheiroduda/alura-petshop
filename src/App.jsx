@@ -22,7 +22,7 @@ function App() {
           <Route path="/sobre">
             <Sobre />
           </Route>
-          <Route path="/categoria">
+          <Route path="/categoria/:id">
             <Categoria />
           </Route>
           <Route path="/posts/:id">
