@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Route, useRouteMatch } from 'react-router-dom'
+import { useParams, Route, useRouteMatch, Link, Switch } from 'react-router-dom'
 
 import ListaCategorias from '../components/ListaCategorias'
 import ListaPost from '../components/ListaPost'
+import SubCategoria from './SubCategoria'
+
+import { busca } from '../api/api'
 
 import '../assets/css/blog.css'
-import { busca } from '../api/api'
-import { Link } from 'react-router-dom'
 
 const Categoria = () => {
   const { id } = useParams()
@@ -36,9 +37,14 @@ const Categoria = () => {
           </li>
         ))}
       </ul>
-      <Route exact psth={`${path}/`}>
-        <ListaPost url={`/posts?categoria=${id}`} />
-      </Route>
+      <Switch>
+        <Route exact path={`${path}/`}>
+          <ListaPost url={`/posts?categoria=${id}`} />
+        </Route>
+        <Route path={`${path}/:subcategoria`}>
+          <SubCategoria />
+        </Route>
+      </Switch>
     </>
   )
 }
